@@ -50,7 +50,7 @@ const getAnchorAndDir = (
 ): { anchor: [number, number]; dir: [number, number] } => {
   const outside = 0.2;
   switch (origin) {
-    case "top-left": 
+    case "top-left":
       return { anchor: [0, -outside * h], dir: [0, 1] };
     case "top-right":
       return { anchor: [w, -outside * h], dir: [0, 1] };

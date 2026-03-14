@@ -1,13 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { EventType } from "@/lib/model";
 
-interface Props {
-  id: number;
-  title: string;
-  image: string;
-}
-
-const EventCard = ({ id, title, image }: Props) => {
+const EventCard = ({ title, image, id, location, date, time }: EventType) => {
   return (
     <Link href={`/events/${id}`} className="event-card">
       <Image
@@ -17,7 +12,24 @@ const EventCard = ({ id, title, image }: Props) => {
         height={300}
         className="poster"
       />
+
+      <div className="flex flex-row gap-2">
+        <Image src="/icons/pin.svg" alt="location" width={14} height={14} />
+        <p>{location}</p>
+      </div>
+
       <p className="title">{title}</p>
+
+      <div className="datetime">
+        <div>
+          <Image src="/icons/calendar.svg" alt="date" width={14} height={14} />
+          <p>{date}</p>
+        </div>
+        <div>
+          <Image src="/icons/clock.svg" alt="time" width={14} height={14} />
+          <p>{time}</p>
+        </div>
+      </div>
     </Link>
   );
 };
