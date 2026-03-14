@@ -1,34 +1,6 @@
 import EventCard from "@/components/EventCard";
 import ExploreBtn from "@/components/ExploreBtn";
-
-const events = [
-  {
-    id: 1,
-    title: "Hackathon 2024",
-    image: "/images/event1.png",
-  },
-  {
-    id: 2,
-    title: "Tech Conference",
-    image: "/images/event2.png",
-  },
-  {
-    id: 3,
-    title: "Developer Meetup",
-    image: "/images/event3.png",
-  },
-
-  {
-    id: 4,
-    title: "Tech Meetup",
-    image: "/images/event4.png",
-  },
-  {
-    id: 5,
-    title: "AI Conference",
-    image: "/images/event5.png",
-  },
-];
+import { events } from "@/lib/model";
 
 const Page = () => (
   <>
