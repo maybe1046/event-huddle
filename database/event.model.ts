@@ -98,9 +98,11 @@ eventSchema.pre("save", function () {
       throw new Error("Invalid hour value");
     }
 
-    if (hours < 0 || hours > 23) {
-      throw new Error("Invalid hour value");
-    }
+     } else if (hours < 0 || hours > 23) {
+       throw new Error("Invalid hour value");
+     }
+
+     this.time = `${String(hours).padStart(2, "0")}:${minutes}`;
 
     this.time = `${String(hours).padStart(2, "0")}:${minutes}`;
   }
