@@ -53,6 +53,10 @@ eventSchema.pre("save", function () {
       .replace(/[^\w\s-]/g, "") // strip non-word chars except spaces/hyphens
       .replace(/\s+/g, "-") // collapse spaces to hyphens
       .replace(/-+/g, "-"); // collapse consecutive hyphens
+
+    if (!this.slug) {
+      throw new Error("Title must contain at least one alphanumeric character");
+    }
   }
 
   // Normalize date to ISO format (YYYY-MM-DD)
